@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yee338024.github.io/wangshang-chat-bot/sitemap.xml

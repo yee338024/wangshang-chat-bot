@@ -1,11 +1,39 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
+const siteRoot = 'https://yee338024.github.io/wangshang-chat-bot/'
+
 export default defineConfig({
   base: '/wangshang-chat-bot/',
   lang: 'zh-CN',
   title: '旺商聊（旺旺）聊天协议',
+  titleTemplate: ':title | 旺商聊（旺旺）聊天协议',
   description: '旺商本地 HTTP 与 WebSocket 协议文档',
+  cleanUrls: true,
+  head: [
+    ['meta', { name: 'robots', content: 'index,follow' }],
+    [
+      'link',
+      {
+        rel: 'sitemap',
+        type: 'application/xml',
+        title: 'Sitemap',
+        href: `${siteRoot}sitemap.xml`
+      }
+    ]
+  ],
+  transformPageData: (pageData) => {
+    if (pageData.relativePath === '404.md') {
+      return
+    }
+
+    let route = pageData.relativePath.replace(/\.md$/, '')
+    route = route.replace(/(^|\/)index$/, '$1')
+
+    const canonicalUrl = new URL(route, siteRoot).toString()
+
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(['link', { rel: 'canonical', href: canonicalUrl }])
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

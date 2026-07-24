@@ -14,7 +14,7 @@ title: 使用说明
 - `HTTP 协议`：用于常规请求，例如发送消息、获取群组信息
 - `WebSocket 协议`：用于接收新消息，包括群组消息和好友消息
 
-![端口信息](https://img.cdn.apipost.cn/upload/user/1341666/log/c35dbfdd-74b1-4e8a-a5f2-0489964c849d.png)
+![端口信息](/assets/active.png)
 
 ## HTTP 请求示例
 
@@ -50,7 +50,6 @@ axios.post('http://127.0.0.1:2123', {
 
 ## 好友接口文档
 
-- [获取好友列表](/get-friend-list)
 - [获取黑名单信息](/get-black-list-info)
 - [获取好友信息](/get-friend-info)
 - [拉黑好友](/friend-black-setting)

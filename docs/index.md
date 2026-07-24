@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "旺商聊天协议"
   tagline: 消息收发 — WebSocket 协议与 API 参考
-  image: /assets/w.webp
+  image: https://github.com/yee338024/wangshang-chat-bot/raw/master/docs/assets/w.webp
   actions:
     - theme: brand
       text: 开发文档
